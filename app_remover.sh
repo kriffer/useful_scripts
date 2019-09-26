@@ -9,7 +9,6 @@ RM=$(which rm)
 declare -a PATHS=($(find / -name "*$APP*" -type f -o -name "*$APP*" -type d 2>&1 | grep -v "find:"))
 # shellcheck disable=SC2068
 for PATH in in ${PATHS[@]}; do
-
   while read -p "Deleting: $PATH. Are you sure ? (y/n): " answer; do
     if [[ $answer =~ ^[Yy]$ ]] || [[ $answer =~ ^[Nn]$ ]]; then
       break

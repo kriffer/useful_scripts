@@ -43,3 +43,4 @@ for PACKAGE_NAME in ${PACKAGES[@]}; do
   fi
 
 done
+
