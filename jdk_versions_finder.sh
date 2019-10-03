@@ -17,6 +17,7 @@ fi
 unset UNAME
 
 declare OS_TYPE
+
 if [[ $(echo $DISTRO | grep -e "centos" -e "redhat") ]]; then
   OS_TYPE="rhel"
   declare -a PACKAGES=($(rpm -qa | grep -e "jdk" -e "zulu" -e "zing"))
@@ -24,10 +25,8 @@ fi
 if [[ $(echo :$DISTRO | grep -e "ubuntu" -e "debian") ]]; then
   OS_TYPE="deb"
   declare -a PACKAGES=($(dpkg -l | grep -e "jdk" -e "zulu" -e "zing"))
-
 fi
 
-# shellcheck disable=SC2068
 for PACKAGE_NAME in ${PACKAGES[@]}; do
   if [[ $OS_TYPE -eq "rhel" ]]; then
     EXEC_JAVA=$(rpm -ql $PACKAGE_NAME | grep "bin/java" | head -n1)

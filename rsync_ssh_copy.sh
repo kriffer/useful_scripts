@@ -1,6 +1,8 @@
 #!/bin/bash
+
 # An interactive script for transferring files over rsync/ssh
 # made to avoid recalling and typing commands manually 
+
 
 read -p "Enter source path (default-current dir): " source
 read -p "Enter destination path (default-current dir): " dest

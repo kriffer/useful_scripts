@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script is intended to be useful while applications removing in Linux and Mac environment.
-# usage:  sudo ./app_remover.sh <app_name>
+# Example usage:  sudo ./app_remover.sh <app_name>
 
 APP=$1
 IFS=$'\n'
